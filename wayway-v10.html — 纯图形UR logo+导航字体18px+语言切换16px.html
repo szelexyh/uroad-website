@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>优路物流 - 全球国际货运代理服务商</title>
+<meta name="keywords" content="国际货运代理,海运代理,空运代理,铁路运输,跨境电商物流,报关报检,仓储服务,深圳货代">
+<meta name="description" content="深圳市优路国际物流有限公司，专业提供海运、空运、铁路、陆运、跨境电商物流、危险品运输、报关报检等一站式国际物流服务，覆盖全球主要港口和城市。">
+<meta name="author" content="深圳市优路国际物流有限公司">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="优路物流 - 全球国际货运代理服务商">
+<meta property="og:description" content="专业提供海运、空运、铁路、陆运等一站式国际物流服务，覆盖全球主要港口和城市。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.way-way.cn">
+<link rel="icon" type="image/png" href="https://aka.doubaocdn.com/s/Q9Dw692lkV">
+<style>
+:root{
+  --c-primary:#0f2c4a;
+  --c-primary-light:#1e5f8f;
+  --c-accent:#e8792b;
+  --c-accent-light:#f5a623;
+  --c-success:#22c55e;
+  --c-danger:#ef4444;
+  --c-bg:#f8fafc;
+  --c-bg-alt:#ffffff;
+  --c-text:#1e293b;
+  --c-text-secondary:#64748b;
+  --c-border:#e2e8f0;
+  --radius:12px;
+  --radius-lg:16px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.08);
+  --shadow-md:0 4px 16px rgba(0,0,0,.1);
+  --shadow-lg:0 12px 40px rgba(0,0,0,.12);
+  --transition:.3s cubic-bezier(.4,0,.2,1);
+  --max-w:1200px;
+  --nav-h:72px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color:var(--c-text);background:var(--c-bg);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none;transition:color var(--transition)}
+a:hover{color:var(--c-accent)}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+input,textarea{font-family:inherit;font-size:inherit}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:32px;font-weight:700;color:var(--c-primary);margin-bottom:8px}
+.section-title p{font-size:16px;color:var(--c-text-secondary)}
+.section-title .line{width:48px;height:3px;background:var(--c-accent);margin:16px auto 0;border-radius:2px}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .8s ease,transform .8s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .8s ease,transform .8s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+
+/* 导航栏 */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;background:transparent;transition:background var(--transition),box-shadow var(--transition)}
+.navbar.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--shadow-sm)}
+.navbar .container{display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav-logo{display:flex;align-items:center;gap:10px;padding:4px 0}
+.nav-logo span{font-size:20px;font-weight:700;color:#fff;transition:color var(--transition);text-shadow:0 1px 3px rgba(0,0,0,.4)}
+.navbar.scrolled .nav-logo span{color:var(--c-primary);text-shadow:none}
+.nav-menu{display:flex;align-items:center;gap:8px}
+.nav-menu > li > a{display:block;padding:10px 20px;border-radius:8px;font-size:18px;font-weight:600;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.4);transition:all var(--transition)}
+.navbar.scrolled .nav-menu > li > a{color:var(--c-text);text-shadow:none}
+.nav-menu > li > a:hover{background:rgba(232,121,43,.1);color:var(--c-accent)}
+.nav-lang{display:flex;align-items:center;gap:4px;margin-left:16px}
+.nav-lang a{font-size:16px;padding:6px 10px;border-radius:4px;color:#fff;opacity:.7;transition:all var(--transition)}
+.navbar.scrolled .nav-lang a{color:var(--c-text-secondary)}
+.nav-lang a.active{opacity:1;color:var(--c-accent);font-weight:600}
+[data-i18n]{transition:opacity .2s}
+.nav-toggle{display:none;flex-direction:column;gap:5px;padding:8px}
+.nav-toggle span{width:24px;height:2px;background:#fff;border-radius:2px;transition:all var(--transition)}
+.navbar.scrolled .nav-toggle span{background:var(--c-primary)}
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1001;opacity:0;visibility:hidden;transition:all var(--transition)}
+.mobile-overlay.open{opacity:1;visibility:visible}
+.mobile-drawer{position:fixed;top:0;right:0;bottom:0;width:280px;z-index:1002;background:#fff;transform:translateX(100%);transition:transform var(--transition);padding:24px;display:flex;flex-direction:column}
+.mobile-drawer.open{transform:translateX(0)}
+.mobile-drawer .close-btn{align-self:flex-end;font-size:24px;color:var(--c-text-secondary);padding:8px}
+.mobile-drawer ul{margin-top:16px}
+.mobile-drawer ul li a{display:block;padding:14px 0;font-size:16px;font-weight:500;border-bottom:1px solid var(--c-border)}
+.mobile-drawer .lang-switch{margin-top:auto;display:flex;gap:12px;padding-top:16px;border-top:1px solid var(--c-border)}
+
+/* Hero Banner - 图片背景 */
+.hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat;transform:scale(1.05);animation:heroZoom 20s ease-in-out infinite alternate}
+@keyframes heroZoom{from{transform:scale(1.05)}to{transform:scale(1.15)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,44,74,.5) 0%,rgba(15,44,74,.85) 100%)}
+.hero-content{position:relative;z-index:2;text-align:center;color:#fff;padding:0 24px;max-width:800px}
+.hero-content h1{font-size:clamp(28px,5vw,52px);font-weight:800;margin-bottom:16px;letter-spacing:2px;animation:fadeUp 1s ease both}
+.hero-content .subtitle{font-size:clamp(16px,2.5vw,22px);font-weight:300;opacity:.9;margin-bottom:12px;letter-spacing:1px;animation:fadeUp 1s ease .2s both}
+.hero-content .desc{font-size:15px;opacity:.75;margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto;animation:fadeUp 1s ease .3s both}
+.hero-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:var(--c-accent);color:#fff;border-radius:50px;font-size:16px;font-weight:600;transition:all var(--transition);animation:fadeUp 1s ease .4s both}
+.hero-btn:hover{background:var(--c-accent-light);transform:translateY(-2px);box-shadow:var(--shadow-md);color:#fff}
+.hero-scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;color:#fff;opacity:.7;font-size:13px;animation:bounce 2s infinite}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* 服务网格 */
+.services{background:var(--c-bg-alt)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px}
+.service-card{background:var(--c-bg);border-radius:var(--radius);padding:28px 20px;text-align:center;cursor:pointer;transition:all var(--transition);border:1px solid transparent}
+.service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--c-accent);background:#fff}
+.service-card .icon{width:56px;height:56px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--c-primary),var(--c-primary-light));border-radius:14px;transition:all var(--transition)}
+.service-card:hover .icon{background:linear-gradient(135deg,var(--c-accent),var(--c-accent-light))}
+.service-card .icon svg{width:28px;height:28px;fill:#fff}
+.service-card h3{font-size:16px;font-weight:600;color:var(--c-primary);margin-bottom:6px}
+.service-card p{font-size:13px;color:var(--c-text-secondary);line-height:1.5}
+
+/* 重点服务详情 */
+.service-detail{margin-top:64px}
+.service-detail-item{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:64px}
+.service-detail-item:last-child{margin-bottom:0}
+.service-detail-item.reverse{direction:rtl}
+.service-detail-item.reverse > *{direction:ltr}
+.service-detail-img{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md)}
+.service-detail-img img{width:100%;height:320px;object-fit:cover;transition:transform .5s ease}
+.service-detail-item:hover .service-detail-img img{transform:scale(1.05)}
+.service-detail-text .tag{display:inline-block;padding:4px 14px;background:rgba(232,121,43,.1);color:var(--c-accent);border-radius:50px;font-size:12px;font-weight:600;margin-bottom:12px}
+.service-detail-text h3{font-size:26px;font-weight:700;color:var(--c-primary);margin-bottom:16px}
+.service-detail-text .desc{font-size:15px;color:var(--c-text-secondary);line-height:1.8;margin-bottom:20px}
+.service-detail-text ul{margin-bottom:20px}
+.service-detail-text ul li{font-size:14px;color:var(--c-text);line-height:2;padding-left:24px;position:relative}
+.service-detail-text ul li::before{content:'';position:absolute;left:0;top:10px;width:8px;height:8px;background:var(--c-accent);border-radius:50%}
+.service-detail-text ul li strong{color:var(--c-primary);font-weight:600}
+.service-detail-text .more-btn{display:inline-flex;align-items:center;gap:6px;color:var(--c-accent);font-size:14px;font-weight:600;transition:gap var(--transition)}
+.service-detail-text .more-btn:hover{gap:12px}
+
+
+
+/* 关于我们 */
+.about{background:var(--c-bg)}
+.about-intro{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;margin-bottom:72px}
+.about-tag{display:inline-block;padding:4px 14px;background:rgba(232,121,43,.1);color:var(--c-accent);border-radius:50px;font-size:12px;font-weight:600;letter-spacing:1px;margin-bottom:12px}
+.about-text h3{font-size:28px;font-weight:700;color:var(--c-primary);margin-bottom:16px}
+.about-text p{font-size:15px;color:var(--c-text-secondary);line-height:1.9;margin-bottom:14px}
+.about-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.about-stat{text-align:center;padding:16px 8px;background:#fff;border-radius:12px;box-shadow:var(--shadow-sm)}
+.about-stat .num{font-size:28px;font-weight:800;color:var(--c-accent);line-height:1;margin-bottom:4px}
+.about-stat .label{font-size:12px;color:var(--c-text-secondary)}
+.about-img{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md)}
+.about-img img{width:100%;height:380px;object-fit:cover;display:block}
+.about-img-badge{position:absolute;bottom:20px;left:20px;background:var(--c-primary);color:#fff;padding:14px 20px;border-radius:12px;text-align:center;box-shadow:var(--shadow-md)}
+.about-img-badge span{display:block;font-size:28px;font-weight:800;color:var(--c-accent);line-height:1}
+.about-img-badge small{font-size:11px;opacity:.8}
+.about-timeline{margin-bottom:72px}
+.timeline-title{font-size:22px;font-weight:700;color:var(--c-primary);text-align:center;margin-bottom:40px}
+.timeline-track{display:flex;justify-content:space-between;position:relative;padding:0 20px}
+.timeline-track::before{content:'';position:absolute;top:32px;left:40px;right:40px;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-primary))}
+.timeline-item{flex:1;text-align:center;position:relative;z-index:1}
+.timeline-item .year{font-size:20px;font-weight:800;color:var(--c-accent);margin-bottom:8px}
+.timeline-item .dot{width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--c-accent);margin:0 auto 12px;box-shadow:0 0 0 4px rgba(232,121,43,.15)}
+.timeline-item p{font-size:13px;color:var(--c-text-secondary);line-height:1.6;padding:0 8px}
+.about-values{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.value-card{background:#fff;border-radius:var(--radius-lg);padding:32px 28px;text-align:center;box-shadow:var(--shadow-sm);transition:transform var(--transition),box-shadow var(--transition);border-top:3px solid var(--c-accent)}
+.value-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.value-icon{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,rgba(232,121,43,.12),rgba(15,44,74,.08));display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:var(--c-accent)}
+.value-icon svg{width:28px;height:28px}
+.value-card h4{font-size:18px;font-weight:700;color:var(--c-primary);margin-bottom:10px}
+.value-card p{font-size:14px;color:var(--c-text-secondary);line-height:1.7}
+
+/* 合作伙伴 */
+.partners{background:var(--c-bg)}
+.partners-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:960px;margin:0 auto 40px}
+.partner-item{background:#fff;border-radius:10px;padding:14px 10px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm);transition:transform var(--transition),box-shadow var(--transition);height:84px}
+.partner-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.partner-item .logo-sprite{width:110px;height:52px;background-image:url('https://aka.doubaocdn.com/s/ktnpmUU5Al');background-size:auto 300%;background-repeat:no-repeat;background-position:center}
+.partners-scroll{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.partners-logo-track{display:flex;width:max-content;animation:scrollLeft 50s linear infinite;gap:14px}
+.partners-scroll:hover .partners-logo-track{animation-play-state:paused}
+.partners-logo-track .partner-item{flex-shrink:0;width:160px;height:74px}
+.partners-logo-track .logo-sprite{width:100px;height:46px;background-size:auto 300%}
+@keyframes scrollLeft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* 页脚 */
+.footer{background:var(--c-primary);color:rgba(255,255,255,.8);padding:64px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.footer-brand .logo-row{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.footer-brand .logo-text{font-size:18px;font-weight:700;color:#fff}
+.footer-brand p{font-size:14px;line-height:1.7;color:rgba(255,255,255,.6)}
+.footer-col h4{color:#fff;font-size:16px;margin-bottom:20px;font-weight:600}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:14px;color:rgba(255,255,255,.6);transition:color var(--transition)}
+.footer-col ul li a:hover{color:var(--c-accent-light)}
+.footer-contact li{display:flex;gap:10px;font-size:14px;color:rgba(255,255,255,.6);margin-bottom:12px;line-height:1.6}
+.footer-contact li svg{width:18px;height:18px;flex-shrink:0;margin-top:2px;fill:var(--c-accent)}
+
+.footer-map{margin-top:16px;position:relative}
+.footer-map iframe{display:block;width:100%;height:200px;border-radius:10px;background:rgba(255,255,255,.05)}
+.map-nav-btn{display:inline-block;margin-top:8px;font-size:12px;color:var(--c-accent);text-decoration:none;font-weight:600;transition:opacity .2s}
+.map-nav-btn:hover{opacity:.8}
+.footer-bottom{margin-top:48px;padding:24px 0;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:rgba(255,255,255,.5)}
+
+
+@media(max-width:900px){
+  .section{padding:56px 0}
+  .nav-menu,.nav-lang{display:none}
+  .nav-toggle{display:flex}
+  .sc-wrapper{grid-template-columns:1fr}
+  .orbit-container{max-width:360px;margin-top:24px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .footer-brand{grid-column:1/-1}
+  .footer-map iframe{height:180px}
+  .about-intro{grid-template-columns:1fr;gap:32px}
+  .about-img img{height:280px}
+  .about-stats{grid-template-columns:repeat(2,1fr)}
+  .timeline-track{flex-direction:column;gap:24px;padding:0}
+  .timeline-track::before{display:none}
+  .timeline-item{text-align:left;display:flex;align-items:center;gap:16px}
+  .timeline-item .year{min-width:60px;margin-bottom:0}
+  .timeline-item .dot{margin:0;flex-shrink:0}
+  .timeline-item p{flex:1;padding:0}
+  .about-values{grid-template-columns:1fr}
+  .service-detail-item{grid-template-columns:1fr;gap:24px}
+  .service-detail-item.reverse{direction:ltr}
+  .service-detail-img img{height:260px}
+  .adv-showcase{grid-template-columns:1fr !important;gap:24px !important}
+  .adv-showcase-img img{height:280px !important}
+}
+@media(max-width:600px){
+  .container{padding:0 16px}
+  .section-title h2{font-size:24px}
+  .services-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .service-card{padding:20px 12px}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#hero" class="nav-logo">
+      <img src="https://aka.doubaocdn.com/s/Q9Dw692lkV" alt="优路国际物流" style="height:44px;width:auto;border-radius:10px;display:block">
+      <span>优路国际物流</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#services" data-i18n="nav.service">服务介绍</a></li>
+      <li><a href="#about" data-i18n="nav.about">关于我们</a></li>
+      <li><a href="#partners" data-i18n="nav.partner">合作伙伴</a></li>
+      <li><a href="#footer" data-i18n="nav.contact">联系我们</a></li>
+      <li class="nav-lang">
+        <a href="#" class="active" data-lang="zh">中文</a>
+        <a href="#" data-lang="en">EN</a>
+      </li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer">
+  <button class="close-btn" id="mobileClose">&times;</button>
+  <ul>
+    <li><a href="#services" data-i18n="nav.service">服务介绍</a></li>
+    <li><a href="#about" data-i18n="nav.about">关于我们</a></li>
+    <li><a href="#partners" data-i18n="nav.partner">合作伙伴</a></li>
+    <li><a href="#footer" data-i18n="nav.contact">联系我们</a></li>
+  </ul>
+  <div class="lang-switch">
+    <a href="#" class="active" data-lang="zh">中文</a>
+    <a href="#" data-lang="en">English</a>
+  </div>
+</aside>
+
+<!-- Hero Banner - 图片背景 -->
+<section class="hero" id="hero">
+  <div class="hero-bg" style="background-image:url('https://aka.doubaocdn.com/s/mez0hVtXjJ')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 data-i18n="hero.title">成为全球物流的引领者</h1>
+    <p class="subtitle" data-i18n="hero.subtitle">专业全球国际货运代理服务商</p>
+    <p class="desc" data-i18n="hero.desc">专注国际货运代理十年，提供海运、空运、铁路、陆运等一站式跨境物流解决方案，服务覆盖全球主要港口与城市。</p>
+    <a href="#services" class="hero-btn" data-i18n="hero.btn">了解更多 &rarr;</a>
+  </div>
+  <div class="hero-scroll-hint" data-i18n="hero.scroll">向下滚动 &darr;</div>
+</section>
+
+<!-- 服务范围网格 -->
+<section class="services section" id="services">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2 data-i18n="svc.title">服务范围</h2>
+      <p data-i18n="svc.sub">全方位国际物流服务，满足您的多样化运输需求</p>
+      <div class="line"></div>
+    </div>
+    <div class="services-grid">
+      <a href="#detail-sea" class="service-card reveal" style="display:block;text-decoration:none;color:inherit">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.38 0 2.74-.35 4-.99 2.52 1.29 5.48 1.29 8 0 1.26.65 2.62.99 4 .99h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.89-6.68c.08-.26.06-.54-.06-.78s-.34-.42-.6-.5L20 10.62V6c0-1.1-.9-2-2-2h-3V1H9v3H6c-1.1 0-2 .9-2 2v4.62l-1.29.42c-.26.08-.48.26-.6.5s-.15.52-.06.78L3.95 19z"/></svg></div>
+        <h3 data-i18n="svc.sea.t">海运</h3>
+        <p data-i18n="svc.sea.d">整箱/拼箱运输，覆盖全球主要港口，优势航线价格稳定</p>
+      </a>
+      <a href="#detail-air" class="service-card reveal" style="display:block;text-decoration:none;color:inherit">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div>
+        <h3 data-i18n="svc.air.t">空运</h3>
+        <p data-i18n="svc.air.d">直飞/转飞空运服务，时效快捷，安全可靠，舱位保障</p>
+      </a>
+      <a href="#detail-rail" class="service-card reveal" style="display:block;text-decoration:none;color:inherit">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
+        <h3 data-i18n="svc.rail.t">铁路运输</h3>
+        <p data-i18n="svc.rail.d">中欧班列、中亚班列，陆路运输性价比高，稳定发运</p>
+      </a>
+      <div class="service-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
+        <h3 data-i18n="svc.road.t">陆运</h3>
+        <p data-i18n="svc.road.d">中港运输、国内干线、跨境卡车，门到门灵活配送</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <h3 data-i18n="svc.dest.t">目的港服务</h3>
+        <p data-i18n="svc.dest.d">海外代理网络覆盖，清关、派送、仓储一站式目的港服务</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></div>
+        <h3 data-i18n="svc.customs.t">报关报检</h3>
+        <p data-i18n="svc.customs.d">专业报关团队，快速通关，各类单证代办，合规高效</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 18V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zM4 12h4v2H4v-2zm10 6H4v-2h10v2zm6 0h-4v-2h4v2zm0-4H10v-2h10v2z"/></svg></div>
+        <h3 data-i18n="svc.warehouse.t">仓储服务</h3>
+        <p data-i18n="svc.warehouse.d">国内保税仓、海外仓，分拣打包、贴标换包等增值服务</p>
+      </div>
+    </div>
+
+    <!-- 重点服务详细介绍 -->
+    <div class="service-detail">
+      <!-- 海运 -->
+      <div class="service-detail-item reveal" id="detail-sea">
+        <div class="service-detail-img">
+          <img src="https://aka.doubaocdn.com/s/J4NgSGAwzU" alt="海运服务">
+        </div>
+        <div class="service-detail-text">
+          <span class="tag" data-i18n="detail.sea.tag">SEA FREIGHT</span>
+          <h3 data-i18n="detail.sea.t">海运服务</h3>
+          <p class="desc" data-i18n="detail.sea.d">作为无船承运人（NVOCC），我们以承运人身份签发提单及运单，组织货物全程运输，制定运输计划并组织实施，为客户提供一站式海运物流解决方案。</p>
+          <ul>
+            <li><strong data-i18n="detail.sea.l1t">无船承运业务：</strong><span data-i18n="detail.sea.l1d">代理订舱、报关、检验、理货、存仓及出库，目的港清关、分拨及配送</span></li>
+            <li><strong data-i18n="detail.sea.l2t">集装箱运输：</strong><span data-i18n="detail.sea.l2d">提供整箱（FCL）、散货拼箱（LCL）、特种柜、SOC柜报价服务</span></li>
+            <li><strong data-i18n="detail.sea.l3t">优势航线：</strong><span data-i18n="detail.sea.l3d">覆盖东南亚、中东、欧美、非洲、拉美等全球主要港口，运价稳定舱位充足</span></li>
+          </ul>
+          <a href="#footer" class="more-btn" data-i18n="more">了解更多 &rarr;</a>
+        </div>
+      </div>
+      <!-- 空运 -->
+      <div class="service-detail-item reverse reveal" id="detail-air">
+        <div class="service-detail-img">
+          <img src="https://p3-doubao-search-sign.byteimg.com/labis/image/06630345c83313e19820d67ad6b90792~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804059669&x-signature=QIwToeSLwAgA4dsXl%2F5wQEjQgXk%3D" alt="空运服务">
+        </div>
+        <div class="service-detail-text">
+          <span class="tag" data-i18n="detail.air.tag">AIR FREIGHT</span>
+          <h3 data-i18n="detail.air.t">空运服务</h3>
+          <p class="desc" data-i18n="detail.air.d">拥有民航总局颁发的空运一代资质，历经近十年发展，在国内重点空港口岸打造出业务精良的团队，整合深圳、广州、香港、上海、北京、厦门等机场优势资源。</p>
+          <ul>
+            <li><strong data-i18n="detail.air.l1t">高效专业：</strong><span data-i18n="detail.air.l1d">安全、快捷、高效的空运服务，航线覆盖全球各大国际机场</span></li>
+            <li><strong data-i18n="detail.air.l2t">舱位保障：</strong><span data-i18n="detail.air.l2d">与南航、卢森堡航空等多家航司签订包板包舱协议，优惠运价+充足舱位</span></li>
+            <li><strong data-i18n="detail.air.l3t">特色服务：</strong><span data-i18n="detail.air.l3d">鲜活易腐、危险品、超大超重货物等特种空运方案</span></li>
+          </ul>
+          <a href="#footer" class="more-btn" data-i18n="more">了解更多 &rarr;</a>
+        </div>
+      </div>
+      <!-- 铁路 -->
+      <div class="service-detail-item reveal" id="detail-rail">
+        <div class="service-detail-img">
+          <img src="https://p26-doubao-search-sign.byteimg.com/labis/image/dc0bb7cfd5d52ea89f92016a07645a15~tplv-be4g95zd3a-896x896.jpeg?lk3s=0ed4045e&x-expires=1804059669&x-signature=DXGVBRHCQwRzWGt3ZOAiEaCberw%3D" alt="铁路运输">
+        </div>
+        <div class="service-detail-text">
+          <span class="tag" data-i18n="detail.rail.tag">RAIL FREIGHT</span>
+          <h3 data-i18n="svc.rail.t">铁路运输</h3>
+          <p class="desc" data-i18n="detail.rail.d">依托中欧班列、中亚班列等国际铁路通道，为客户提供高性价比的陆路运输方案，稳定发运，时效可控。</p>
+          <ul>
+            <li><strong data-i18n="detail.rail.l1t">拼箱出口：</strong><span data-i18n="detail.rail.l1d">成都/西安/武汉/合肥/郑州始发，全国上门提货，清关转关一站式</span></li>
+            <li><strong data-i18n="detail.rail.l2t">拼箱进口：</strong><span data-i18n="detail.rail.l2d">波兰华沙/德国汉堡/杜伊斯堡始发，欧洲全境提货，全国分拨派送</span></li>
+            <li><strong data-i18n="detail.rail.l3t">整柜进出口：</strong><span data-i18n="detail.rail.l3d">全国整箱门到门、铁铁联运、公铁联运、全欧清关派送</span></li>
+          </ul>
+          <a href="#footer" class="more-btn" data-i18n="more">了解更多 &rarr;</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 关于我们 -->
+<section class="about section" id="about">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2 data-i18n="about.title">关于我们</h2>
+      <p data-i18n="about.sub">十年深耕，连接全球</p>
+      <div class="line"></div>
+    </div>
+
+    <!-- 公司简介：左右图文 -->
+    <div class="about-intro">
+      <div class="about-text reveal">
+        <span class="about-tag" data-i18n="about.tag">COMPANY PROFILE</span>
+        <h3 data-i18n="about.introTitle">专业国际物流服务商</h3>
+        <p data-i18n="about.intro1">优路国际物流成立于2016年，总部位于深圳市罗湖区，是经商务部批准的一级国际货运代理企业。公司成立初期以海运代理为核心，深耕东南亚、中东等优势航线，逐步发展成为集海运、空运、铁路、陆运于一体的综合物流服务商。</p>
+        <p data-i18n="about.intro2">2018年获得NVOCC无船承运人资质，2020年获得民航总局空运一代资质，2022年加入WCAworld、JCtrans等国际物流联盟。目前在广州、香港设有分支机构，海外代理网络覆盖全球120多个国家和地区，服务制造业、国际贸易、跨境电商等近万家企业客户。</p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="num" data-target="10">0</div>
+            <div class="label" data-i18n="about.stat1">年行业经验</div>
+          </div>
+          <div class="about-stat">
+            <div class="num" data-target="120">0</div>
+            <div class="label" data-i18n="about.stat2">覆盖国家地区</div>
+          </div>
+          <div class="about-stat">
+            <div class="num" data-target="10000">0</div>
+            <div class="label" data-i18n="about.stat3">合作企业客户</div>
+          </div>
+          <div class="about-stat">
+            <div class="num" data-target="50">0</div>
+            <div class="label" data-i18n="about.stat4">专业团队成员</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-img reveal">
+        <img src="https://aka.doubaocdn.com/s/J4NgSGAwzU" alt="优路物流">
+        <div class="about-img-badge">
+          <span>10+</span>
+          <small data-i18n="about.badge">年行业沉淀</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- 发展历程时间轴 -->
+    <div class="about-timeline reveal">
+      <h3 class="timeline-title" data-i18n="about.timelineTitle">发展历程</h3>
+      <div class="timeline-track">
+        <div class="timeline-item">
+          <div class="year">2016</div>
+          <div class="dot"></div>
+          <p data-i18n="about.t1">公司成立，开启国际货运代理业务</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2018</div>
+          <div class="dot"></div>
+          <p data-i18n="about.t2">获得NVOCC资质，开通东南亚/中东优势航线</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2020</div>
+          <div class="dot"></div>
+          <p data-i18n="about.t3">获得空运一代资质，与南航/卢航签订包板协议</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2022</div>
+          <div class="dot"></div>
+          <p data-i18n="about.t4">加入WCAworld联盟，开通中欧班列铁路业务</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2024</div>
+          <div class="dot"></div>
+          <p data-i18n="about.t5">全球网络覆盖120+国家，服务近万家企业客户</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 愿景使命价值观 -->
+    <div class="about-values">
+      <div class="value-card reveal">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h4 data-i18n="about.v1t">企业愿景</h4>
+        <p data-i18n="about.v1d">成为全球物流的引领者，打造值得信赖的国际物流品牌</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h4 data-i18n="about.v2t">企业使命</h4>
+        <p data-i18n="about.v2d">为客户提供安全、高效、可靠的一站式国际物流服务</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h4 data-i18n="about.v3t">核心价值观</h4>
+        <p data-i18n="about.v3d">专业、诚信、创新、共赢，以客户为中心持续创造价值</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 供应链环形动画 -->
+<section class="supply-chain section" id="supplychain">
+  <div class="container">
+    <div class="sc-wrapper">
+      <div class="sc-text reveal-left">
+        <h2 data-i18n="sc.title">一条龙式自有供应链服务</h2>
+        <div class="flow">
+          <span data-i18n="sc.s1">海外供应商</span>
+          <span class="arrow">&rarr;</span>
+          <span data-i18n="sc.s2">海外仓库</span>
+          <span class="arrow">&rarr;</span>
+          <span data-i18n="sc.s3">跨境国际物流</span>
+          <span class="arrow">&rarr;</span>
+          <span data-i18n="sc.s4">境内库</span>
+        </div>
+        <p data-i18n="sc.desc">公司经营大洋洲、欧美以及日韩等地的跨境商品贸易，不断更新服务理念，提供多品种供应链服务。拥有自属的海外保税库及海外配送平台，能够有效快速地提供"海外供应商—海外仓库—跨境国际物流配送—境内库"一条龙式自有供应链服务，为安全快捷地完成采购和配送各类跨境商品提供可靠保障。</p>
+      </div>
+      <div class="orbit-container reveal-right">
+        <div class="orbit-ring"></div>
+        <div class="orbit-ring inner"></div>
+        <div class="orbit-center"><span data-i18n="sc.center1">100,000+</span><br><span data-i18n="sc.center2">TEUs / year</span></div>
+        <div class="orbit-ball" data-i18n="sc.b1">北美</div>
+        <div class="orbit-ball" data-i18n="sc.b2">欧洲</div>
+        <div class="orbit-ball" data-i18n="sc.b3">中东红海</div>
+        <div class="orbit-ball" data-i18n="sc.b4">拉丁美洲</div>
+        <div class="orbit-ball" data-i18n="sc.b5">非洲</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 合作伙伴 -->
+<section class="partners section" id="partners">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2 data-i18n="pt.title">合作伙伴</h2>
+      <p data-i18n="pt.sub">与全球知名航空公司、船公司及物流联盟建立长期稳定合作</p>
+      <div class="line"></div>
+    </div>
+    <div class="partners-grid reveal">
+      <div class="partner-item"><div class="logo-sprite" style="background-position:0% 0%" title="中国南方航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:25% 0%" title="马来西亚航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:50% 0%" title="汉莎航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:75% 0%" title="泰国航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:100% 0%" title="阿联酋航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:0% 50%" title="OOCL"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:25% 50%" title="赫伯罗特"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:50% 50%" title="达飞轮船"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:75% 50%" title="中远海运"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:100% 50%" title="马士基"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:0% 100%" title="中国国际航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:25% 100%" title="顺丰速运"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:50% 100%" title="以星航运"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:75% 100%" title="UPS"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:100% 100%" title="长荣海运"></div></div>
+    </div>
+  </div>
+  <div class="partners-scroll">
+    <div class="partners-logo-track">
+      <div class="partner-item"><div class="logo-sprite" style="background-position:0% 0%" title="中国南方航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:25% 0%" title="马来西亚航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:50% 0%" title="汉莎航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:75% 0%" title="泰国航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:100% 0%" title="阿联酋航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:0% 50%" title="OOCL"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:25% 50%" title="赫伯罗特"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:50% 50%" title="达飞轮船"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:75% 50%" title="中远海运"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:100% 50%" title="马士基"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:0% 100%" title="中国国际航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:25% 100%" title="顺丰速运"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:50% 100%" title="以星航运"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:75% 100%" title="UPS"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:100% 100%" title="长荣海运"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:0% 0%" title="中国南方航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:25% 0%" title="马来西亚航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:50% 0%" title="汉莎航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:75% 0%" title="泰国航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:100% 0%" title="阿联酋航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:0% 50%" title="OOCL"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:25% 50%" title="赫伯罗特"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:50% 50%" title="达飞轮船"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:75% 50%" title="中远海运"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:100% 50%" title="马士基"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:0% 100%" title="中国国际航空"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:25% 100%" title="顺丰速运"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:50% 100%" title="以星航运"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:75% 100%" title="UPS"></div></div>
+      <div class="partner-item"><div class="logo-sprite" style="background-position:100% 100%" title="长荣海运"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-row">
+          <img src="https://aka.doubaocdn.com/s/Q9Dw692lkV" alt="优路国际物流" style="height:44px;width:auto;border-radius:10px;display:block">
+          <span class="logo-text">优路国际物流</span>
+        </div>
+        <p data-i18n="ft.brand">优路国际物流成立于2016年，是经商务部批准的一级国际货运代理企业，专业提供海运、空运、铁路等全方位国际物流服务。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="ft.nav">快速导航</h4>
+        <ul>
+          <li><a href="#services" data-i18n="nav.service">服务介绍</a></li>
+              <li><a href="#about" data-i18n="nav.about">关于我们</a></li>
+          <li><a href="#partners" data-i18n="nav.partner">合作伙伴</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="ft.svc">服务项目</h4>
+        <ul>
+          <li><a href="#services" data-i18n="ft.svc1">海运代理</a></li>
+          <li><a href="#services" data-i18n="ft.svc2">空运代理</a></li>
+          <li><a href="#services" data-i18n="ft.svc3">铁路运输</a></li>
+          <li><a href="#services" data-i18n="ft.svc4">跨境电商物流</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="ft.contact">联系我们</h4>
+        <ul class="footer-contact">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>深圳市罗湖区莲塘国威路国威电子商务大厦1403室</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>86-755 82208574</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span>service@way-way.cn</span>
+          </li>
+        </ul>
+        <div class="footer-map">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=114.135%2C22.555%2C114.175%2C22.585&layer=mapnik&marker=22.567%2C114.153" 
+                  width="100%" height="220" frameborder="0" 
+                  style="border-radius:10px;border:1px solid rgba(255,255,255,.15)"></iframe>
+          <a href="https://www.openstreetmap.org/?mlat=22.567&mlon=114.153#map=16/22.567/114.153" 
+             target="_blank" class="map-nav-btn">在地图中查看 →</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Copyright © 2016-2026 深圳市优路国际物流有限公司 版权所有</span>
+      <span>粤ICP备XXXXXXXX号</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(s,ctx){return(ctx||document).querySelector(s)};
+  var $$ = function(s,ctx){return Array.prototype.slice.call((ctx||document).querySelectorAll(s))};
+
+
+  // 导航栏滚动变色
+  var navbar = $('#navbar');
+  function onScroll(){
+    var y = window.pageYOffset || document.documentElement.scrollTop;
+    if(y > 50){ navbar.classList.add('scrolled'); }
+    else{ navbar.classList.remove('scrolled'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // 移动端抽屉
+  var navToggle = $('#navToggle');
+  var mobileDrawer = $('#mobileDrawer');
+  var mobileOverlay = $('#mobileOverlay');
+  var mobileClose = $('#mobileClose');
+  function openDrawer(){
+    mobileDrawer.classList.add('open');
+    mobileOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer(){
+    mobileDrawer.classList.remove('open');
+    mobileOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  navToggle.addEventListener('click', openDrawer);
+  mobileClose.addEventListener('click', closeDrawer);
+  mobileOverlay.addEventListener('click', closeDrawer);
+  $$('#mobileDrawer a').forEach(function(a){ a.addEventListener('click', closeDrawer); });
+
+  // 滚动显现动画
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          if(entry.target.classList.contains('stat-item') || entry.target.classList.contains('about-stat')){
+            animateNumber(entry.target.querySelector('.num'));
+          }
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.15, rootMargin:'0px 0px -50px 0px'});
+    $$('.reveal, .reveal-left, .reveal-right, .stat-item, .about-stat').forEach(function(el){ io.observe(el); });
+  }else{
+    $$('.reveal, .reveal-left, .reveal-right').forEach(function(el){ el.classList.add('visible'); });
+    $$('.stat-item .num, .about-stat .num').forEach(animateNumber);
+  }
+
+  // 数字滚动动画
+  function animateNumber(el){
+    if(!el || el._animated) return;
+    el._animated = true;
+    var target = parseInt(el.dataset.target, 10) || 0;
+    var duration = 2000;
+    var startTime = null;
+    function step(timestamp){
+      if(!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target).toLocaleString();
+      if(progress < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString();
+    }
+    requestAnimationFrame(step);
+  }
+
+
+  // 平滑滚动
+  $$('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id.length > 1){
+        var target = $(id);
+        if(target){
+          e.preventDefault();
+          var top = target.getBoundingClientRect().top + window.pageYOffset - 60;
+          window.scrollTo({top:top, behavior:'smooth'});
+        }
+      }
+    });
+  });
+
+  // 中英文翻译字典
+  var i18n = {
+    'nav.service': {zh:'服务介绍', en:'Services'},
+    'nav.supply': {zh:'供应链', en:'Supply Chain'},
+    'nav.partner': {zh:'合作伙伴', en:'Partners'},
+    'nav.contact': {zh:'联系我们', en:'Contact'},
+    'nav.home': {zh:'首页', en:'Home'},
+        'about.title': {zh:'关于我们', en:'About Us'},
+    'about.sub': {zh:'十年深耕，连接全球', en:'A Decade of Excellence, Connecting the World'},
+    'about.tag': {zh:'COMPANY PROFILE', en:'COMPANY PROFILE'},
+    'about.introTitle': {zh:'专业国际物流服务商', en:'Professional International Logistics Provider'},
+    'about.intro1': {zh:'优路国际物流成立于2016年，总部位于深圳市罗湖区，是经商务部批准的一级国际货运代理企业。公司成立初期以海运代理为核心，深耕东南亚、中东等优势航线，逐步发展成为集海运、空运、铁路、陆运于一体的综合物流服务商。', en:'Founded in 2016 and headquartered in Luohu District, Shenzhen, U-Road Intl Logistics is a Class-A international freight forwarder approved by the Ministry of Commerce. Starting with sea freight agency, we focused on Southeast Asia and Middle East routes, and have grown into an integrated logistics provider covering sea, air, rail and road freight.'},
+    'about.intro2': {zh:'2018年获得NVOCC无船承运人资质，2020年获得民航总局空运一代资质，2022年加入WCAworld、JCtrans等国际物流联盟。目前在广州、香港设有分支机构，海外代理网络覆盖全球120多个国家和地区，服务制造业、国际贸易、跨境电商等近万家企业客户。', en:'We obtained NVOCC qualification in 2018, Class-A air forwarding qualification from CAAC in 2020, and joined WCAworld and JCtrans in 2022. With branches in Guangzhou and Hong Kong, our overseas agency network covers 120+ countries, serving nearly 10,000 clients in manufacturing, trade and e-commerce.'},
+    'about.stat1': {zh:'年行业经验', en:'Years Experience'},
+    'about.stat2': {zh:'覆盖国家地区', en:'Countries Covered'},
+    'about.stat3': {zh:'合作企业客户', en:'Enterprise Clients'},
+    'about.stat4': {zh:'专业团队成员', en:'Team Members'},
+    'about.badge': {zh:'年行业沉淀', en:'Years of Expertise'},
+    'about.timelineTitle': {zh:'发展历程', en:'Our Milestones'},
+    'about.t1': {zh:'公司成立，开启国际货运代理业务', en:'Company founded in Shenzhen, launching sea freight forwarding'},
+    'about.t2': {zh:'获得NVOCC资质，开通东南亚/中东优势航线', en:'Obtained NVOCC, launched SE Asia & Middle East routes'},
+    'about.t3': {zh:'获得空运一代资质，与南航/卢航签订包板协议', en:'Obtained Class-A air forwarding, block-space with China Southern & Cargolux'},
+    'about.t4': {zh:'加入WCAworld联盟，开通中欧班列铁路业务', en:'Joined WCAworld, launched China-Europe rail freight'},
+    'about.t5': {zh:'全球网络覆盖120+国家，服务近万家企业客户', en:'Global network covers 120+ countries, serving 10,000+ clients'},
+    'about.v1t': {zh:'企业愿景', en:'Vision'},
+    'about.v1d': {zh:'成为全球物流的引领者，打造值得信赖的国际物流品牌', en:'To be the leader of global logistics and build a trusted international logistics brand'},
+    'about.v2t': {zh:'企业使命', en:'Mission'},
+    'about.v2d': {zh:'为客户提供安全、高效、可靠的一站式国际物流服务', en:'To provide safe, efficient and reliable one-stop international logistics services'},
+    'about.v3t': {zh:'核心价值观', en:'Core Values'},
+    'about.v3d': {zh:'专业、诚信、创新、共赢，以客户为中心持续创造价值', en:'Professionalism, integrity, innovation and win-win — customer-centric value creation'},
+    'nav.about': {zh:'关于我们', en:'About Us'},
+    'hero.title': {zh:'成为全球物流的引领者', en:'To Be the Leader of Global Logistics'},
+    'hero.subtitle': {zh:'专业全球国际货运代理服务商', en:'Professional Global Freight Forwarder'},
+    'hero.desc': {zh:'专注国际货运代理十年，提供海运、空运、铁路、陆运等一站式跨境物流解决方案，服务覆盖全球主要港口与城市。', en:'With 10 years of experience in international freight forwarding, we provide one-stop cross-border logistics solutions including sea, air, rail and road freight, covering major ports and cities worldwide.'},
+    'hero.btn': {zh:'了解更多 →', en:'Learn More →'},
+    'hero.scroll': {zh:'向下滚动 ↓', en:'Scroll Down ↓'},
+    'svc.title': {zh:'服务范围', en:'Our Services'},
+    'svc.sub': {zh:'全方位国际物流服务，满足您的多样化运输需求', en:'Comprehensive international logistics services to meet your diverse transportation needs'},
+    'svc.sea.t': {zh:'海运', en:'Sea Freight'},
+    'svc.sea.d': {zh:'整箱/拼箱运输，覆盖全球主要港口，优势航线价格稳定', en:'FCL/LCL shipping covering global major ports with competitive rates'},
+    'svc.air.t': {zh:'空运', en:'Air Freight'},
+    'svc.air.d': {zh:'直飞/转飞空运服务，时效快捷，安全可靠，舱位保障', en:'Direct/transfer air freight with fast delivery, reliability and guaranteed capacity'},
+    'svc.rail.t': {zh:'铁路运输', en:'Rail Freight'},
+    'svc.rail.d': {zh:'中欧班列、中亚班列，陆路运输性价比高，稳定发运', en:'China-Europe/Central Asia rail freight with cost-effective and stable schedules'},
+    'svc.road.t': {zh:'陆运', en:'Road Freight'},
+    'svc.road.d': {zh:'中港运输、国内干线、跨境卡车，门到门灵活配送', en:'Cross-border trucking and domestic line-haul with flexible door-to-door delivery'},
+    'svc.dest.t': {zh:'目的港服务', en:'Destination Services'},
+    'svc.dest.d': {zh:'海外代理网络覆盖，清关、派送、仓储一站式目的港服务', en:'Global agency network for one-stop customs clearance, delivery and warehousing'},
+    'svc.customs.t': {zh:'报关报检', en:'Customs Clearance'},
+    'svc.customs.d': {zh:'专业报关团队，快速通关，各类单证代办，合规高效', en:'Professional customs brokerage with fast clearance and full documentation support'},
+    'svc.warehouse.t': {zh:'仓储服务', en:'Warehousing'},
+    'svc.warehouse.d': {zh:'国内保税仓、海外仓，分拣打包、贴标换包等增值服务', en:'Bonded and overseas warehouses with value-added services like picking, packing and labeling'},
+    'adv.title': {zh:'核心优势', en:'Core Advantages'},
+    'adv.sub': {zh:'专业团队 + 全球网络，为您的货物保驾护航', en:'Professional team + global network to safeguard your cargo'},
+    'adv.1.t': {zh:'特种货物运输', en:'Special Cargo'},
+    'adv.1.d': {zh:'化学品、超限货物等特殊货物运输方案，安全性、可靠性、环境可持续性以及经济可行性全面保障。', en:'Specialized solutions for chemicals and oversized cargo with full assurance of safety, reliability, sustainability and cost-effectiveness.'},
+    'adv.2.t': {zh:'冷藏货物运输', en:'Reefer Cargo'},
+    'adv.2.d': {zh:'水果蔬菜、蛋白质产品、鱼类海鲜、药品等温控货物运输，全程冷链监控，确保货物品质。', en:'Temperature-controlled transport for fruits, vegetables, seafood and pharmaceuticals with full cold-chain monitoring.'},
+    'adv.3.t': {zh:'危险品货物运输', en:'Dangerous Goods'},
+    'adv.3.d': {zh:'经验丰富的危险品管理团队，从认证、货物验收到预防丢失，全流程符合现行危险货物法规。', en:'Experienced DG team handling certification, cargo acceptance and loss prevention in full compliance with dangerous goods regulations.'},
+    'adv.4.t': {zh:'普通货物运输', en:'General Cargo'},
+    'adv.4.d': {zh:'玩具、零售商品、汽车电子零件、纸品等一般商品运输，是我们最常处理的货物类型，经验丰富。', en:'General commodities including toys, retail goods, auto parts and paper products — our most frequently handled cargo with rich experience.'},
+    'adv.why': {zh:'十年行业深耕，值得信赖的物流伙伴', en:'A Decade of Excellence, Your Trusted Logistics Partner'},
+    'adv.why.d': {zh:'优路物流自2016年成立以来，始终专注国际货运代理领域，拥有NVOCC无船承运人资质、民航总局空运一代资质，是WCAworld、JCtrans等国际物流联盟的核心成员，与全球近万家企业建立了长期稳定的合作关系。', en:'Since its founding in 2016, U-Link Logistics has focused on international freight forwarding, holding NVOCC and Class-A air forwarding qualifications. As a core member of WCAworld and JCtrans, we have established long-term partnerships with nearly 10,000 enterprises worldwide.'},
+    'adv.q1': {zh:'资质齐全', en:'Full Qualifications'},
+    'adv.q1d': {zh:'NVOCC+空运一代双资质', en:'NVOCC & Class-A Air Forwarder'},
+    'adv.q2': {zh:'全球网络', en:'Global Network'},
+    'adv.q2d': {zh:'覆盖120+国家地区', en:'Covering 120+ countries'},
+    'adv.q3': {zh:'舱位保障', en:'Capacity Guarantee'},
+    'adv.q3d': {zh:'多家航司船司包板包舱', en:'Block-space agreements with carriers'},
+    'adv.q4': {zh:'一站式服务', en:'One-Stop Service'},
+    'adv.q4d': {zh:'门到门全程物流方案', en:'Door-to-door logistics solutions'},
+    'sc.title': {zh:'一条龙式自有供应链服务', en:'End-to-End Supply Chain Service'},
+    'sc.s1': {zh:'海外供应商', en:'Overseas Supplier'},
+    'sc.s2': {zh:'海外仓库', en:'Overseas Warehouse'},
+    'sc.s3': {zh:'跨境国际物流', en:'Cross-Border Logistics'},
+    'sc.s4': {zh:'境内库', en:'Domestic Warehouse'},
+    'sc.desc': {zh:'公司经营大洋洲、欧美以及日韩等地的跨境商品贸易，不断更新服务理念，提供多品种供应链服务。拥有自属的海外保税库及海外配送平台，能够有效快速地提供"海外供应商—海外仓库—跨境国际物流配送—境内库"一条龙式自有供应链服务，为安全快捷地完成采购和配送各类跨境商品提供可靠保障。', en:'We operate cross-border trade across Oceania, Europe, America, Japan and Korea, offering diversified supply chain services. With our own overseas bonded warehouses and distribution platforms, we provide efficient end-to-end supply chain services from overseas suppliers to domestic warehouses, ensuring safe and fast procurement and delivery.'},
+    'sc.center1': {zh:'100,000+', en:'100,000+'},
+    'sc.center2': {zh:'TEUs / year', en:'TEUs / year'},
+    'sc.b1': {zh:'北美', en:'North America'},
+    'sc.b2': {zh:'欧洲', en:'Europe'},
+    'sc.b3': {zh:'中东红海', en:'Middle East'},
+    'sc.b4': {zh:'拉丁美洲', en:'Latin America'},
+    'sc.b5': {zh:'非洲', en:'Africa'},
+    'pt.title': {zh:'合作伙伴', en:'Partners'},
+    'pt.sub': {zh:'与全球知名航空公司、船公司及物流联盟建立长期稳定合作', en:'Long-term partnerships with world-class airlines, shipping lines and logistics alliances'},
+    'ft.brand': {zh:'优路国际物流成立于2016年，是经商务部批准的一级国际货运代理企业，专业提供海运、空运、铁路等全方位国际物流服务。', en:'U-Road Intl Logistics, founded in 2016, is a Class-A international freight forwarder approved by the Ministry of Commerce, providing comprehensive sea, air and rail logistics services.'},
+    'ft.nav': {zh:'快速导航', en:'Quick Links'},
+    'ft.svc': {zh:'服务项目', en:'Services'},
+    'ft.svc1': {zh:'海运代理', en:'Sea Freight'},
+    'ft.svc2': {zh:'空运代理', en:'Air Freight'},
+    'ft.svc3': {zh:'铁路运输', en:'Rail Freight'},
+    'ft.svc4': {zh:'跨境电商物流', en:'E-commerce Logistics'},
+    'ft.contact': {zh:'联系我们', en:'Contact Us'},
+    'ft.cr': {zh:'Copyright © 2016-2026 优路物流 版权所有', en:'Copyright © 2016-2026 U-Link Logistics. All Rights Reserved.'},
+    'detail.sea.tag': {zh:'SEA FREIGHT', en:'SEA FREIGHT'},
+    'detail.sea.t': {zh:'海运服务', en:'Sea Freight Service'},
+    'detail.sea.d': {zh:'作为无船承运人（NVOCC），我们以承运人身份签发提单及运单，组织货物全程运输，制定运输计划并组织实施，为客户提供一站式海运物流解决方案。', en:'As an NVOCC, we issue bills of lading as carrier, organize full transportation, and provide one-stop sea freight solutions.'},
+    'detail.sea.l1t': {zh:'无船承运业务：', en:'NVOCC Services: '},
+    'detail.sea.l1d': {zh:'代理订舱、报关、检验、理货、存仓及出库，目的港清关、分拨及配送', en:'Booking, customs clearance, inspection, tallying, warehousing, destination clearance and distribution'},
+    'detail.sea.l2t': {zh:'集装箱运输：', en:'Container Transport: '},
+    'detail.sea.l2d': {zh:'提供整箱（FCL）、散货拼箱（LCL）、特种柜、SOC柜报价服务', en:'FCL, LCL, special containers and SOC container quotation services'},
+    'detail.sea.l3t': {zh:'优势航线：', en:'Key Routes: '},
+    'detail.sea.l3d': {zh:'覆盖东南亚、中东、欧美、非洲、拉美等全球主要港口，运价稳定舱位充足', en:'Covering SE Asia, Middle East, Europe, America, Africa and Latin America with stable rates and capacity'},
+    'detail.air.tag': {zh:'AIR FREIGHT', en:'AIR FREIGHT'},
+    'detail.air.t': {zh:'空运服务', en:'Air Freight Service'},
+    'detail.air.d': {zh:'拥有民航总局颁发的空运一代资质，历经近十年发展，在国内重点空港口岸打造出业务精良的团队，整合深圳、广州、香港、上海、北京、厦门等机场优势资源。', en:'With Class-A air forwarding qualification from CAAC, we have built a professional team at major Chinese airports, integrating resources from Shenzhen, Guangzhou, Hong Kong, Shanghai, Beijing and Xiamen.'},
+    'detail.air.l1t': {zh:'高效专业：', en:'Efficiency: '},
+    'detail.air.l1d': {zh:'安全、快捷、高效的空运服务，航线覆盖全球各大国际机场', en:'Safe, fast and efficient air freight covering major international airports worldwide'},
+    'detail.air.l2t': {zh:'舱位保障：', en:'Capacity: '},
+    'detail.air.l2d': {zh:'与南航、卢森堡航空等多家航司签订包板包舱协议，优惠运价+充足舱位', en:'Block-space agreements with China Southern, Cargolux and more for competitive rates and capacity'},
+    'detail.air.l3t': {zh:'特色服务：', en:'Special Services: '},
+    'detail.air.l3d': {zh:'鲜活易腐、危险品、超大超重货物等特种空运方案', en:'Special air freight for perishables, dangerous goods and oversized cargo'},
+    'detail.rail.tag': {zh:'RAIL FREIGHT', en:'RAIL FREIGHT'},
+    'detail.rail.t': {zh:'铁路运输', en:'Rail Freight Service'},
+    'detail.rail.d': {zh:'依托中欧班列、中亚班列等国际铁路通道，为客户提供高性价比的陆路运输方案，稳定发运，时效可控。', en:'Leveraging China-Europe and Central Asia rail corridors, we provide cost-effective overland transport with stable schedules and controllable transit times.'},
+    'detail.rail.l1t': {zh:'拼箱出口：', en:'LCL Export: '},
+    'detail.rail.l1d': {zh:'成都/西安/武汉/合肥/郑州始发，全国上门提货，清关转关一站式', en:'From Chengdu/Xi an/Wuhan/Hefei/Zhengzhou with nationwide pickup and one-stop customs clearance'},
+    'detail.rail.l2t': {zh:'拼箱进口：', en:'LCL Import: '},
+    'detail.rail.l2d': {zh:'波兰华沙/德国汉堡/杜伊斯堡始发，欧洲全境提货，全国分拨派送', en:'From Warsaw/Hamburg/Duisburg with Europe-wide pickup and nationwide distribution in China'},
+    'detail.rail.l3t': {zh:'整柜进出口：', en:'FCL Import/Export: '},
+    'detail.rail.l3d': {zh:'全国整箱门到门、铁铁联运、公铁联运、全欧清关派送', en:'Nationwide FCL door-to-door, rail-rail and road-rail intermodal, Europe-wide clearance and delivery'},
+    'more': {zh:'了解更多 →', en:'Learn More →'}
+  };
+
+  var currentLang = 'zh';
+  function setLang(lang){
+    currentLang = lang;
+    $$('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if(i18n[key] && i18n[key][lang]){
+        if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA'){
+          el.placeholder = i18n[key][lang];
+        }else{
+          el.textContent = i18n[key][lang];
+        }
+      }
+    });
+    // 更新所有语言按钮状态（桌面端+移动端）
+    $$('.nav-lang a, .lang-switch a').forEach(function(a){
+      var isActive = a.dataset.lang === lang;
+      a.classList.toggle('active', isActive);
+      if(a.closest('.nav-lang')){
+        a.textContent = a.dataset.lang === 'zh' ? '中文' : 'EN';
+      }else{
+        a.textContent = a.dataset.lang === 'zh' ? '中文' : 'English';
+      }
+    });
+    // 更新html lang
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  }
+
+  // 语言切换按钮
+  $$('.nav-lang a').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var lang = a.dataset.lang;
+      if(lang !== currentLang) setLang(lang);
+    });
+  });
+  // 移动端语言切换（和桌面端共用setLang）
+  $$('.lang-switch a').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var lang = a.dataset.lang;
+      if(lang !== currentLang) setLang(lang);
+    });
+  });
+})();
+</script>
+</body>
+</html>
